@@ -1,14 +1,19 @@
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import AppLayout from "../components/layout/AppLayout"
+import ChatList, { EmptyChat } from "../features/chats/components/ChatList"
+import ChatScreen from "../features/chats/components/ChatScreen"
+import Search from "../features/search/components/Search"
 
 const AppRoute = () => {
   return (
    <Routes>
         <Route element={<AppLayout/>}>
-
-        <Route path="/" element={<h1>Home Page</h1>} />
-        <Route path="/search" element={<h1>Search Page</h1>} />
-        <Route path="/chats" element={<h1>Chats Page</h1>} />
+        <Route path="/" element={<Navigate to="/chats" replace />} />
+        <Route path="chats" element={<ChatList />}>
+            <Route index element={<EmptyChat />} />
+            <Route path=":id" element={<ChatScreen />} />
+        </Route>
+        <Route path="/search" element={<Search/>} />
         <Route path="/profile" element={<h1>Profile Page</h1>} />
         </Route>
    </Routes> 

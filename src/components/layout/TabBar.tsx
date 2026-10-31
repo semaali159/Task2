@@ -27,9 +27,9 @@ const TabBar = () => {
   return (
     <nav
         aria-label='Primary'
-        className='shrink-0 border-t border-line bg-white pb-[max(8px,env(safe-area-inset-bottom))] md:order-first md:w-[76px] md:border-r md:border-t-0 md:pb-0'
+        className='shrink-0 border-t border-line bg-white pb-[max(8px,env(safe-area-inset-bottom))] md:order-first md:w-19 md:border-r md:border-t-0 md:pb-0'
     >
-        <ul className='m-0 flex list-none items-center justify-between px-[18px] pb-2.5 pt-3.5 md:flex-col md:justify-start md:gap-4 md:px-0 md:pb-0 md:pt-8'>
+        <ul className='m-0 flex list-none items-center justify-between px-4.5 pb-2.5 pt-3.5 md:flex-col md:justify-start md:gap-4 md:px-0 md:pb-0 md:pt-8'>
             {TABS.map(({label, Icon, to, primary})=>(
                 <li key={label} className='flex flex-1 justify-center md:flex-none'>
                     {primary ? (
@@ -49,9 +49,10 @@ const TabBar = () => {
                 </li>
             ))}
         </ul>
+        {/* home indicator */}
         <span 
             aria-hidden="true"
-            className='mx-auto mt-1.5 block h-[5px] w-[134px] rounded-[3px] bg-ink md:hidden '
+            className='mx-auto mt-1.5 block h-1.25 w-33.5 rounded-[3px] bg-ink md:hidden '
         />
     </nav>
   )
